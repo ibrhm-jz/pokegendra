@@ -37,7 +37,6 @@ class PokemonRepository {
   Future getPokemonSpecie(String idPokemon) async {
     try {
       final response = await api.get('api/v2/pokemon/' + idPokemon);
-      print(response.data);
     } catch (e) {}
   }
 }
