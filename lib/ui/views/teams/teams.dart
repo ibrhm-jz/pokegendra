@@ -24,7 +24,6 @@ class _TeamsState extends State<Teams> {
     final response = await teamDbRepository.getTeams();
     setState(() {
       teams = response;
-      print(teams[0].name);
     });
   }
 

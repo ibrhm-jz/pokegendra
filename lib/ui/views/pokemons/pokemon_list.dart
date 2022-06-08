@@ -94,8 +94,6 @@ class _PokemonListState extends State<PokemonList> {
                                       'Solo se pueden agregar 6 pokemones');
                                 } else {
                                   pokemoneAdd.add(pokemones[i]);
-
-                                  print(pokemones[i].id);
                                 }
                               } else {
                                 pokemoneAdd.remove(pokemones[i]);
@@ -154,8 +152,6 @@ class _PokemonListState extends State<PokemonList> {
                     showToast('Tienes que agregar 6 pokemones');
                     final responsePokemons =
                         await pokemonDbRepository.getPokemons();
-                    print(responsePokemons[0].name.toString() +
-                        responsePokemons[0].teamId.toString());
                   } else {
                     await showDialog(
                       context: context,
@@ -189,9 +185,7 @@ class _PokemonListState extends State<PokemonList> {
                                     isSelected = !isSelected;
                                     showToast('Se creo tu equipo');
                                   });
-                                } catch (e) {
-                                  print(e);
-                                }
+                                } catch (e) {}
                               } else {
                                 showToast('Debes agregar un nombre de equipo');
                               }

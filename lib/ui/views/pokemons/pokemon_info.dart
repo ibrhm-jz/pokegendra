@@ -32,7 +32,6 @@ class _infoPokemonState extends State<infoPokemon> {
     PokemonRepository pokemonRepository = PokemonRepository();
     final response =
         await pokemonRepository.getPokemonInfo(widget.pokemon!.id.toString());
-    print(response);
     setState(() {
       infoPokemon = response;
       isLoad = false;

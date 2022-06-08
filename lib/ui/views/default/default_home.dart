@@ -21,12 +21,10 @@ class _DafaultHomeState extends State<DafaultHome> {
   getPrefs() async {
     var prefs = await SharedPreferences.getInstance();
     final user = prefs.getString('user');
-    print(user);
     if (user == null) {
       setState(() {
         isLoad = false;
       });
-      //
     } else {
       Navigator.pushNamed(context, '/home');
     }
